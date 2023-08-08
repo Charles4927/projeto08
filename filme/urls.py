@@ -3,4 +3,5 @@ from .views import homepage
 
 urlpatterns = [
     path('', homepage),
+    # path('', valores_do_bco),
 ]
