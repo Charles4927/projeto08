@@ -5,9 +5,9 @@ import pyodbc
 
 # Create your views here.
 def homepage(request):
-#     return render(request, "homepage.html")
-#
-# def valores_do_bco(request):
+    return render(request, "homepage.html")
+
+def valores_do_bco(request):
     context = {}
 
     dados_conexao = ("Driver={MySQL ODBC 8.0 Unicode Driver};"
