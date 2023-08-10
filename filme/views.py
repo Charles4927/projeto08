@@ -16,19 +16,19 @@ def homepage(request):
     #                  "UID=admin;"
     #                  "PWD=Admin@Condutec;")
 
-    # dados_conexao = ("Driver={MySQL ODBC 8.0 Unicode Driver};"
-    #                  "Server=177.47.167.82,3306;"
-    #                  "protocol=tcpip;"
-    #                  "Database=cdtmes;"
-    #                  "UID=admin;"
-    #                  "PWD=Admin@Condutec;")
+    dados_conexao = ("Driver={MySQL ODBC 8.0 Unicode Driver};"
+                     "Server=177.47.167.82,3306;"
+                     "protocol=tcpip;"
+                     "Database=cdtmes;"
+                     "UID=admin;"
+                     "PWD=Admin@Condutec;")
 
-    dados_conexao = ('DRIVER={MySQL ODBC 8.0 Unicode Driver};'
-                     'SERVER=177.47.167.82;'
-                     'PORT=3306;'
-                     'DATABASE=cdtmes;'
-                     'UID=admin;'
-                     'PWD=Admin@Condutec;')
+    # dados_conexao = ('DRIVER={MySQL ODBC 8.0 Unicode Driver};'
+    #                  'SERVER=177.47.167.82;'
+    #                  'PORT=3306;'
+    #                  'DATABASE=cdtmes;'
+    #                  'UID=admin;'
+    #                  'PWD=Admin@Condutec;')
 
     conexao = pyodbc.connect(dados_conexao)
 
