@@ -3,10 +3,8 @@ dj-database-url==2.0.0
 Django==4.2.4
 gunicorn==21.2.0
 packaging==23.1
-pyodbc==4.0.39
 pytz==2023.3
 sqlparse==0.4.4
-tk==0.1.0
 typing_extensions==4.7.1
 tzdata==2023.3
 whitenoise==6.5.0
