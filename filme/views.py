@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Filme
-# import pyodbc
+import pyodbc
 
 
 # Create your views here.
