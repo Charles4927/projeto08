@@ -15,7 +15,6 @@ def homepage(request):
     #                  "Database=cdtmes;"
     #                  "UID=admin;"
     #                  "PWD=Admin@Condutec;")
-    # conexao = pyodbc.connect(dados_conexao)
 
     dados_conexao = ("Driver={MySQL ODBC 8.0 Unicode Driver};"
                      "Server=177.47.167.82,3306;"
@@ -23,6 +22,7 @@ def homepage(request):
                      "Database=cdtmes;"
                      "UID=admin;"
                      "PWD=Admin@Condutec;")
+
     conexao = pyodbc.connect(dados_conexao)
 
     cursor = conexao.cursor()
@@ -61,3 +61,6 @@ def homepage(request):
 #
 #     context['ultimo_ciclo'] = str(ultimo_ciclo[-1:][0][0])
 #     return render(request, "homepage.html", context)
+
+
+
