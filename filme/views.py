@@ -11,7 +11,8 @@ def homepage(request):
     context = {}
 
     dados_conexao = ("Driver={MySQL ODBC 8.0 Unicode Driver};"
-                     "Server=10.11.1.10;"
+                     "Server=177.47.167.82;"
+                     "protocol=tcpip;"
                      "Database=cdtmes;"
                      "UID=admin;"
                      "PWD=Admin@Condutec;")
