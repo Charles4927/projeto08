@@ -104,6 +104,21 @@ import dj_database_url
 # }
 
 
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'cdtmes',
+#         'USER': 'admin',
+#         'PASSWORD': 'Admin@Condutec',
+#         'HOST': '177.47.167.82',
+#         'PORT': '3306',
+#     }
+# }
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

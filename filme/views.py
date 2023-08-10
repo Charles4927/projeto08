@@ -10,13 +10,21 @@ import pyodbc
 def homepage(request):
     context = {}
 
+    # dados_conexao = ("Driver={MySQL ODBC 8.0 Unicode Driver};"
+    #                  "Server=10.11.1.10;"
+    #                  "Database=cdtmes;"
+    #                  "UID=admin;"
+    #                  "PWD=Admin@Condutec;")
+    # conexao = pyodbc.connect(dados_conexao)
+
     dados_conexao = ("Driver={MySQL ODBC 8.0 Unicode Driver};"
-                     "Server=177.47.167.82;"
+                     "Server=177.47.167.82,3306;"
                      "protocol=tcpip;"
                      "Database=cdtmes;"
                      "UID=admin;"
                      "PWD=Admin@Condutec;")
     conexao = pyodbc.connect(dados_conexao)
+
     cursor = conexao.cursor()
 
     cursor.execute("SELECT Hora FROM luxor_producao")
