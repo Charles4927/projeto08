@@ -72,39 +72,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'hashflix.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import dj_database_url
-
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.pyodbc',
-#         'NAME': 'cdtmes',
-#         'USER': 'admin',
-#         'PASSWORD': 'Admin@Condutec',
-#         'HOST': '177.47.167.82',
-#         'PORT': '3306',
-#         'OPTIONS': {
-#             'driver': 'MySQL ODBC 8.0 Unicode Driver',
-#             'odbc_connect': 'DRIVER={MySQL ODBC 8.0 Unicode Driver}; SERVER=%s; PORT=%s; DATABASE=%s; UID=%s; PWD=%s' %
-#             ('177.47.167.82', '3306', 'cdtmes', 'admin', 'Admin@Condutec')
-#         },
-#     }
-# }
-
-
-
 
 DATABASES = {
     'default': {
@@ -126,7 +93,6 @@ DATABASES = {
 #         'USER': 'admin',
 #         'PASSWORD': 'Admin@Condutec',
 #         'HOST': '10.11.1.10',
-#         # 'PORT': '3306',
 #     }
 # }
 
