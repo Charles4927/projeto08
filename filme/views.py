@@ -9,14 +9,15 @@ from .models import Filme
 
 def homepage(request):
     context = {}
-
     ciclos = Filme.objects.all()
-
-    # context['ultimo_ciclo'] = str(ciclos[-1:][0][0])
     context['ultimo_ciclo'] = ciclos
-
-
     return render(request, "homepage.html", context)
+
+
+
+
+# def get_luxor():
+# 	return Luxor.objects.all()
 
 
 
