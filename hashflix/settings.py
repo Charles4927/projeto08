@@ -99,10 +99,7 @@ WSGI_APPLICATION = 'hashflix.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': '',
-        'NAME': '',
-    }
+    'default': {}
 }
 
 
