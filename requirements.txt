@@ -6,7 +6,6 @@ click==8.1.6
 colorama==0.4.6
 dj-database-url==2.0.0
 Django==4.2.4
-Flask==2.3.2
 gunicorn==21.2.0
 idna==3.4
 importlib-metadata==6.8.0
