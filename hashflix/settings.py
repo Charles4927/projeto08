@@ -86,24 +86,24 @@ WSGI_APPLICATION = 'hashflix.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cdtmes',
-        'USER': 'admin',
-        'PASSWORD': 'Admin@Condutec',
-        'HOST': '10.11.1.10',
-    }
-}
-
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'cdtmes',
+#         'USER': 'admin',
+#         'PASSWORD': 'Admin@Condutec',
+#         'HOST': '10.11.1.10',
 #     }
 # }
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
