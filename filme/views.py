@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Filme
+import requests
 # import pyodbc
 
 
@@ -9,8 +10,12 @@ from .models import Filme
 
 def homepage(request):
     context = {}
-    ciclos = Filme.objects.all()
-    context['ultimo_ciclo'] = ciclos
+
+    link = 'apiluxorproducao.charlesoliveir9.repl.co'
+
+    ciclos = requests.get(link)
+
+    context['ultimo_ciclo'] = ciclos.json()
     return render(request, "homepage.html", context)
 
 
