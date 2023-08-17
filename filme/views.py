@@ -11,7 +11,7 @@ import requests
 def homepage(request):
     context = {}
 
-    link = 'apiluxorproducao.charlesoliveir9.repl.co'
+    link = 'https://apiluxorproducao.charlesoliveir9.repl.co'
 
     ciclos = requests.get(link)
 
