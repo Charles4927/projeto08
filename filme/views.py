@@ -4,8 +4,8 @@ from django.shortcuts import render
 # from .models import Filme
 import requests
 import mysql.connector
-import locale
-locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
+# import locale
+# locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
 
 
 # Create your views here.
