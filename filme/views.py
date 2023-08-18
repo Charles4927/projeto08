@@ -103,8 +103,6 @@ def homepage(request):
     context['mostrar_qtde_ciclos_do_dia_atual'] = str(qtde_ciclos_do_dia_atual)
 
 
-    # context['ultimo_ciclo'] = valores
-
 
     return render(request, "homepage.html", context)
 
