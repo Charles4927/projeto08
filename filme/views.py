@@ -99,7 +99,7 @@ def homepage(request):
 
     context['mostrar_hora_ultimo_ciclo'] = str(hora_ultimo_ciclo)
 
-    qtde_ciclos_do_dia_atual = locale.format_string('%d', qtde_ciclos_do_dia_atual, grouping=True)
+    # qtde_ciclos_do_dia_atual = locale.format_string('%d', qtde_ciclos_do_dia_atual, grouping=True)
     context['mostrar_qtde_ciclos_do_dia_atual'] = str(qtde_ciclos_do_dia_atual)
 
 
