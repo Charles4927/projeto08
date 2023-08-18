@@ -108,6 +108,7 @@ def homepage(request):
 
 
 
+
 # def get_luxor():
 # 	return Luxor.objects.all()
 
