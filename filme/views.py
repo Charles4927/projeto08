@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Filme
+# from .models import Filme
 import requests
+import mysql.connector
 # import pyodbc
 
 
@@ -8,14 +9,36 @@ import requests
 
 
 
+# def homepage(request):
+#     context = {}
+#     link = 'https://apiluxorproducao.charlesoliveir9.repl.co'
+#     ciclos = requests.get(link)
+#     context['ultimo_ciclo'] = ciclos.json()
+#     return render(request, "homepage.html", context)
+
+
+
+
 def homepage(request):
     context = {}
 
-    link = 'https://apiluxorproducao.charlesoliveir9.repl.co'
+    # link = 'https://apiluxorproducao.charlesoliveir9.repl.co'
 
-    ciclos = requests.get(link)
+    dados_conexao = mysql.connector.connect(
+        host='177.47.167.82',
+        user='admin',
+        password='Admin@Condutec',
+        database='cdtmes',
+    )
 
-    context['ultimo_ciclo'] = ciclos.json()
+    cursor = dados_conexao.cursor()
+    cursor.execute("SELECT Hora FROM luxor_producao")
+
+    valores = cursor.fetchall()[-3:]
+    cursor.close()
+
+    # ciclos = requests.get(link)
+    context['ultimo_ciclo'] = valores
     return render(request, "homepage.html", context)
 
 
