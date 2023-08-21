@@ -26,7 +26,8 @@ def homepage(request):
     context = {}
 
     dados_conexao = mysql.connector.connect(
-        host='177.47.167.82',
+        host='10.11.1.10',
+        # host='177.47.167.82',
         user='admin',
         password='Admin@Condutec',
         database='cdtmes',
@@ -101,6 +102,8 @@ def homepage(request):
 
     # qtde_ciclos_do_dia_atual = locale.format_string('%d', qtde_ciclos_do_dia_atual, grouping=True)
     context['mostrar_qtde_ciclos_do_dia_atual'] = str(qtde_ciclos_do_dia_atual)
+
+    context['mostrar_status_de_producao'] = str(status_de_producao)
 
 
     return render(request, "homepage.html", context)

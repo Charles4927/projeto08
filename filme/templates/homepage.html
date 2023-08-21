@@ -1,82 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Teste</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="display-1 text-primary">Atividades de Máquinas • Dia 18/08/2023</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h5 class="h5 text-secondary mb-0">Com base em consulta no banco MySQL CDT-MES vigentes das 24 horas do dia atual.</h5>
-            <hr class="my-4">
-        </div>
+{% block content %}
+<div class="row">
+
+
+    <div class="col-md-2">
+        <h4 class="text-white" style="background-color: #007bff; padding: 10px; border-radius: 10px;">Primeiro Ciclo:</h4>
     </div>
 
-    <div class="bar-mesclada-horizontal my-4">
-  <div class="bar-animada-interna"></div>
+    <div class="col-md-1" style="margin-left: -55px;">
+        <p class="text-dark" style="background-color: #ffffff; padding: 11px; border-radius: 15px; border: 2px solid #007bff; font-weight: bold;">{{ mostrar_hora_primeiro_ciclo_do_dia_atual }}</p>
+    </div>
+
+
+    <div class="col-md-2">
+        <h4 class="text-white" style="background-color: #007bff; padding: 10px; border-radius: 10px;">Último Ciclo:</h4>
+    </div>
+
+    <div class="col-md-1" style="margin-left: -55px;">
+        <p class="text-dark" style="background-color: #ffffff; padding: 11px; border-radius: 15px; border: 2px solid #007bff; font-weight: bold;">{{ mostrar_hora_ultimo_ciclo }}</p>
+    </div>
+
+
+    <div class="col-md-2">
+        <h4 class="text-white" style="background-color: #007bff; padding: 10px; border-radius: 10px;">Qtde. Peças:</h4>
+    </div>
+
+    <div class="col-md-1" style="margin-left: -55px;">
+        <p class="text-dark" style="background-color: #ffffff; padding: 11px; border-radius: 15px; border: 2px solid #007bff; font-weight: bold;">{{ mostrar_qtde_ciclos_do_dia_atual }}</p>
+    </div>
+
+
+    <div class="col-md-2">
+        <h4 class="text-white" style="background-color: #007bff; padding: 10px; border-radius: 10px;">Status:</h4>
+    </div>
+
+    <div class="col-md-1" style="margin-left: -55px;">
+        <p class="text-dark" style="background-color: #ffffff; padding: 11px; border-radius: 15px; border: 2px solid #007bff; font-weight: bold;">{{ mostrar_status_de_producao }}</p>
+    </div>
+
+
 </div>
+{% endblock %}
 
-<style>
- .bar-mesclada-horizontal {
-  width: 100%;
-  height: 4px;
-  border-radius: 50px;
-  background-image: linear-gradient(-45deg, #6C7B8B 0%, #E0FFFF 25%, #A9A9A9 50%, #6495ED 75%, #7F7F7F 100%);
- }
-
- .bar-animada-interna {
-  animation: animacaoBarra 7s linear infinite;
-  background-image: linear-gradient(-45deg, #7F7F7F 0%, #6495ED 25%, #A9A9A9 50%, #E0FFFF 75%, #6C7B8B 100%);
-  width: 0px;
-  border-radius: 50px;
-  height: 4px;
- }
-
- @keyframes animacaoBarra {
-  from {
-   width: 0px;
-  }
-  to {
-   width: 100%;
-  }
- }
-</style>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <h5 class="text-white bg-primary p-2">{% block content1 %}{{ mostrar_data_ultimo_ciclo_do_dia_atual }}{% endblock %}</h5>
-        </div>
-
-        <div class="col-lg-12">
-            <h5 class="text-white bg-primary p-2">{% block content2 %}{{ mostrar_hora_primeiro_ciclo_do_dia_atual }}{% endblock %}</h5>
-        </div>
-
-        <div class="col-lg-12">
-            <h5 class="text-white bg-primary p-2">{% block content3 %}{{ mostrar_data_ultimo_ciclo }}{% endblock %}</h5>
-        </div>
-
-        <div class="col-lg-12">
-            <h5 class="text-white bg-primary p-2">{% block content4 %}{{ mostrar_hora_ultimo_ciclo }}{% endblock %}</h5>
-        </div>
-
-        <div class="col-lg-12">
-            <h5 class="text-white bg-primary p-2">{% block content5 %}{{ mostrar_qtde_ciclos_do_dia_atual }}{% endblock %}</h5>
-        </div>
-
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 </html>
