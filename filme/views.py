@@ -94,16 +94,18 @@ def homepage(request):
 
     context['mostrar_data_ultimo_ciclo_do_dia_atual'] = str(data_ultimo_ciclo_do_dia_atual)
 
-    context['mostrar_hora_primeiro_ciclo_do_dia_atual'] = str(hora_primeiro_ciclo_do_dia_atual)
+    context['mostrar_hora_primeiro_ciclo_do_dia_atual'] = str(f"Primeiro Ciclo: {hora_primeiro_ciclo_do_dia_atual}")
 
     context['mostrar_data_ultimo_ciclo'] = str(data_ultimo_ciclo)
 
-    context['mostrar_hora_ultimo_ciclo'] = str(hora_ultimo_ciclo)
+    context['mostrar_hora_ultimo_ciclo'] = str(f"Último Ciclo: {hora_ultimo_ciclo}")
 
     # qtde_ciclos_do_dia_atual = locale.format_string('%d', qtde_ciclos_do_dia_atual, grouping=True)
-    context['mostrar_qtde_ciclos_do_dia_atual'] = str(qtde_ciclos_do_dia_atual)
+    context['mostrar_qtde_ciclos_do_dia_atual'] = str(f"Peças: {qtde_ciclos_do_dia_atual}")
 
-    context['mostrar_status_de_producao'] = str(status_de_producao)
+    context['mostrar_status_de_producao'] = str(f"Status: {status_de_producao}")
+
+    context['texto_completo'] = str(f"Primeiro Ciclo: {hora_primeiro_ciclo_do_dia_atual}, Último Ciclo: {hora_ultimo_ciclo}, Produção: {qtde_ciclos_do_dia_atual}, Status: {status_de_producao}")
 
 
     return render(request, "homepage.html", context)
