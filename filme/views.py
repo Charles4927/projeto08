@@ -207,7 +207,7 @@ class Dados_Producao:
 
 
 def homepage(request):
-    lista_tabelas = ["luxor_producao"]
+    lista_tabelas = ["luxor_producao", "lam04_producao", "lam05_producao"]
     lista_dados = {}
     for item in lista_tabelas:
         lista_dados.update(Dados_Producao().dados(item))
