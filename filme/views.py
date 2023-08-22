@@ -133,7 +133,6 @@ class Dados_Producao:
         cursor = conexao.cursor()
         cursor.execute(f"SELECT Data, Hora FROM {self.tabela_producao}")
         valores_ultimo_ciclo = cursor.fetchall()
-        conexao.close()
 
         # Data e horario atuais que se atualizam (penas para usar para sabem o tempo parado de máquina)
         data_hora_atual_str = (time.strftime("%Y-%m-%d %H:%M:%S"))  # Aqui está em str
@@ -153,6 +152,7 @@ class Dados_Producao:
         # print("comando_ciclos_do_dia_atual:", comando_ciclos_do_dia_atual)
         cursor.execute(comando_ciclos_do_dia_atual)
         valores_ciclos_do_dia_atual = cursor.fetchall()
+        conexao.close()
         # print("valores_ciclos_do_dia_atual:", valores_ciclos_do_dia_atual)
 
         qtde_ciclos_do_dia_atual = len(valores_ciclos_do_dia_atual)
