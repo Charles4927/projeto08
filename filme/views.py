@@ -130,30 +130,30 @@ class Dados_Producao:
             database='cdtmes',
         )
 
-        cursor = conexao.cursor()
-        cursor.execute(f"SELECT Data, Hora FROM {self.tabela_producao}")
-        valores_ultimo_ciclo = cursor.fetchall()
-
         # Data e horario atuais que se atualizam (penas para usar para sabem o tempo parado de máquina)
         data_hora_atual_str = (time.strftime("%Y-%m-%d %H:%M:%S"))  # Aqui está em str
         data_hora_atual_date = datetime.strptime(data_hora_atual_str, "%Y-%m-%d %H:%M:%S")
         # print("data_hor_atual_str:", data_hora_atual_str)
         # print("data_hora_atual_date:", data_hora_atual_date)
-
         data_atual = data_hora_atual_str[8:10] + '/' + data_hora_atual_str[5:7] + '/' + data_hora_atual_str[0:4]
         # print("data_atual:", data_atual)
 
-        data_ultimo_ciclo = valores_ultimo_ciclo[-1][0]
-        # print("data_ultimo_ciclo:", data_ultimo_ciclo)
-        hora_ultimo_ciclo = valores_ultimo_ciclo[-1][1]
-        # print("hora_ultimo_ciclo:", hora_ultimo_ciclo)
-
+        cursor = conexao.cursor()
         comando_ciclos_do_dia_atual = (f"SELECT Data, Hora FROM {tabela_producao} where Data = '{data_atual}'")
         # print("comando_ciclos_do_dia_atual:", comando_ciclos_do_dia_atual)
         cursor.execute(comando_ciclos_do_dia_atual)
         valores_ciclos_do_dia_atual = cursor.fetchall()
         conexao.close()
         # print("valores_ciclos_do_dia_atual:", valores_ciclos_do_dia_atual)
+
+        try:
+            data_ultimo_ciclo = valores_ciclos_do_dia_atual[-1][0]
+            # print("data_ultimo_ciclo:", data_ultimo_ciclo)
+            hora_ultimo_ciclo = valores_ciclos_do_dia_atual[-1][1]
+            # print("hora_ultimo_ciclo:", hora_ultimo_ciclo)
+        except:
+            data_ultimo_ciclo = str("Não houve")
+            hora_ultimo_ciclo = str("Não houve")
 
         qtde_ciclos_do_dia_atual = len(valores_ciclos_do_dia_atual)
         # qtde_ciclos_do_dia_atual = ("{:,.3f}".format(float(qtde_ciclos_do_dia_atual0)))
@@ -162,7 +162,6 @@ class Dados_Producao:
         data_ultimo_ciclo_do_dia_atual = data_atual
         # print("data_ultimo_ciclo_do_dia_atual:", data_ultimo_ciclo_do_dia_atual)
 
-        hora_primeiro_ciclo_do_dia_atual = None
         try:
             hora_primeiro_ciclo_do_dia_atual = valores_ciclos_do_dia_atual[0][1]
         except:
