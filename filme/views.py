@@ -162,6 +162,7 @@ class Dados_Producao:
         data_ultimo_ciclo_do_dia_atual = data_atual
         # print("data_ultimo_ciclo_do_dia_atual:", data_ultimo_ciclo_do_dia_atual)
 
+        hora_primeiro_ciclo_do_dia_atual = None
         try:
             hora_primeiro_ciclo_do_dia_atual = valores_ciclos_do_dia_atual[0][1]
         except:
