@@ -122,7 +122,7 @@ class Dados_Producao:
 
         context = {}
 
-        dados_conexao = mysql.connector.connect(
+        conexao = mysql.connector.connect(
             # host='10.11.1.10',
             host='177.47.167.82',
             user='admin',
@@ -130,9 +130,10 @@ class Dados_Producao:
             database='cdtmes',
         )
 
-        cursor = dados_conexao.cursor()
+        cursor = conexao.cursor()
         cursor.execute(f"SELECT Data, Hora FROM {self.tabela_producao}")
         valores_ultimo_ciclo = cursor.fetchall()
+        conexao.close()
 
         # Data e horario atuais que se atualizam (penas para usar para sabem o tempo parado de máquina)
         data_hora_atual_str = (time.strftime("%Y-%m-%d %H:%M:%S"))  # Aqui está em str
