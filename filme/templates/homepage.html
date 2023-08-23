@@ -5,12 +5,21 @@
     <title>Máquinas em Tempo Real</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            font-size: 20px;
+        }
+    </style>
 
-    <script type="text/javascript">function atualizar(){location.reload();}window.setInterval(atualizar, 30000);</script>
+    <script type="text/javascript">function atualizar(){location.reload();}window.setInterval(atualizar, 20000);</script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+
+
+
+
 
 <div class="container-fluid">
     <div class="row">
@@ -259,27 +268,66 @@
 </div>
 
 
-<canvas id="myChart"></canvas>
+    <canvas id="myChart"></canvas>
 
     <script>
+        var options = {
+            plugins: {
+                tooltip: {
+                    titleFont: {
+                        size: 32
+                    },
+                    bodyFont: {
+                        size: 32
+                    }
+                },
+                legend: {
+                    labels: {
+                        font: {
+                            size: 32
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        ticks: {
+                            font: {
+                                size: 32
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 32
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'polarArea',
             data: {
-                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                labels: ['LX-01', 'LR-04', 'LR-05', 'DC-04', 'DS-03', 'DW-02', 'DW-03'],
                 datasets: [{
                     label: 'Produção Peças',
-                    data: [120, 250, 180, 310, 220],
+                    data: [120, 250, 180, 310, 220, 50, 150],
                     backgroundColor: [
                       'rgba(255, 99, 132, 0.6)',
                       'rgba(54, 162, 235, 0.6)',
                       'rgba(255, 206, 86, 0.6)',
                       'rgba(75, 192, 192, 0.6)',
-                      'rgba(153, 102, 255, 0.6)'
+                      'rgba(255, 99, 71, 0.6)',
+                      'rgba(153, 102, 255, 0.6)',
+                      'rgba(255, 165, 0, 0.6)'
                     ]
                 }]
             },
-            options: {}
+            options: options
         });
     </script>
 
