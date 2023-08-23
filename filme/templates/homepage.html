@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Máquinas em Tempo Real</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="text/javascript">function atualizar(){location.reload();}window.setInterval(atualizar, 30000);</script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -10,7 +15,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h5 style="background-color: #ffffff; padding: 10px; border-radius: 10px; font-weight: bold; font-size: 40px;">Máquinas em Tempo Real</h5>
+            <h5 style="background-color: #ffffff; padding: 10px; border-radius: 10px; font-weight: bold; font-size: 50px;">Máquinas em Tempo Real</h5>
         </div>
     </div>
 
@@ -247,18 +252,37 @@
                 </div>
 
 
-
-
-
-
-
-
-
                 {% endblock %}
             </h5>
         </div>
     </div>
 </div>
+
+
+<canvas id="myChart"></canvas>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                datasets: [{
+                    label: 'Produção Peças',
+                    data: [120, 250, 180, 310, 220],
+                    backgroundColor: [
+                      'rgba(255, 99, 132, 0.6)',
+                      'rgba(54, 162, 235, 0.6)',
+                      'rgba(255, 206, 86, 0.6)',
+                      'rgba(75, 192, 192, 0.6)',
+                      'rgba(153, 102, 255, 0.6)'
+                    ]
+                }]
+            },
+            options: {}
+        });
+    </script>
+
 
 </body>
 </html>
