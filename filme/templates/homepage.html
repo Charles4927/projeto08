@@ -315,7 +315,7 @@
                 labels: ['LX-01', 'LR-04', 'LR-05', 'DC-04', 'DS-03', 'DW-02', 'DW-03'],
                 datasets: [{
                     label: 'Produção Peças',
-                    data: [120, 250, 180, 310, 220, 50, 150],
+                    data: [{{ luxor_producao_mostrar_pecas }}, {{ lam04_producao_mostrar_pecas }}, {{ lam05_producao_mostrar_pecas }}, {{ dc04_producao_mostrar_pecas }}, {{ ds03_producao_mostrar_pecas }}, {{ dw02_producao_mostrar_pecas }}, {{ dw03_producao_mostrar_pecas }}],
                     backgroundColor: [
                       'rgba(255, 99, 132, 0.6)',
                       'rgba(54, 162, 235, 0.6)',
@@ -323,7 +323,7 @@
                       'rgba(75, 192, 192, 0.6)',
                       'rgba(255, 99, 71, 0.6)',
                       'rgba(153, 102, 255, 0.6)',
-                      'rgba(255, 165, 0, 0.6)'
+                      'rgba(0, 128, 0, 0.6)'
                     ]
                 }]
             },

@@ -105,8 +105,12 @@ class Dados_Producao:
 
         # qtde_ciclos_do_dia_atual = locale.format_string('%d', qtde_ciclos_do_dia_atual, grouping=True)
         context[f'{self.tabela_producao}_mostrar_qtde_ciclos_do_dia_atual'] = str(f"Peças: {qtde_ciclos_do_dia_atual}")
+        context[f'{self.tabela_producao}_mostrar_pecas'] = str(f"{qtde_ciclos_do_dia_atual}")
+
 
         context[f'{self.tabela_producao}_mostrar_status_de_producao'] = str(f"Status: {status_de_producao}")
+
+        # context['pecas'] = [50, 100, 150, 200, 250, 300, 350]
 
         return context
 
@@ -117,6 +121,8 @@ def homepage(request):
     for item in lista_tabelas:
         lista_dados.update(Dados_Producao().dados(item))
     # print(lista_dados)
+    # context[f'{self.tabela_producao}_mostrar_pecas'] = str(f"Peças: {qtde_ciclos_do_dia_atual}")
+
     return render(request, "homepage.html", lista_dados)
 
-# homepage(request=1)
+# print(homepage(request=0))
