@@ -34,6 +34,7 @@ class Dados_Producao:
             database='cdtmes',
         )
 
+
         # Data e horario atuais que se atualizam (penas para usar para sabem o tempo parado de máquina)
         data_hora_atual_str = (time.strftime("%Y-%m-%d %H:%M:%S"))  # Aqui está em str
         data_hora_atual_date = datetime.strptime(data_hora_atual_str, "%Y-%m-%d %H:%M:%S")
