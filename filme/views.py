@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import pytz
 import time
 from django.shortcuts import render
 # from .models import Filme
@@ -35,8 +36,9 @@ class Dados_Producao:
         )
 
         # Data e horario atuais que se atualizam (penas para usar para sabem o tempo parado de máquina)
-        data_hora_atual_str = (time.strftime("%Y-%m-%d %H:%M:%S"))  # Aqui está em str
+        data_hora_atual_str = (datetime.now(pytz.timezone('America/Sao_Paulo')).strftime("%Y-%m-%d %H:%M:%S"))  # Aqui está em str
         data_hora_atual_date = datetime.strptime(data_hora_atual_str, "%Y-%m-%d %H:%M:%S")
+        nova_data_hora_str = data_hora_atual_date.strftime('%d/%m/%Y %H:%M:%S')
         # print("data_hor_atual_str:", data_hora_atual_str)
         # print("data_hora_atual_date:", data_hora_atual_date)
         data_atual = data_hora_atual_str[8:10] + '/' + data_hora_atual_str[5:7] + '/' + data_hora_atual_str[0:4]
@@ -109,7 +111,7 @@ class Dados_Producao:
 
         context[f'{self.tabela_producao}_mostrar_status_de_producao'] = str(f"Status: {status_de_producao}")
 
-        context['mostrar_data_hora_atual'] = str(f"Atualização: {data_hora_atual_str}")
+        context['mostrar_data_hora_atual'] = str(f"Atualização: {nova_data_hora_str}")
 
         # context['pecas'] = [50, 100, 150, 200, 250, 300, 350]
 
