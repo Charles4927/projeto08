@@ -85,7 +85,7 @@ class Dados_Producao:
             # print("tempo_entre_datas:", tempo_entre_datas)
 
             status_de_producao = ()
-            if tempo_entre_datas > 30:
+            if tempo_entre_datas > 60:
                 status_de_producao = "Parada"
             else:
                 status_de_producao = "Produzindo"
@@ -107,8 +107,9 @@ class Dados_Producao:
         context[f'{self.tabela_producao}_mostrar_qtde_ciclos_do_dia_atual'] = str(f"Peças: {qtde_ciclos_do_dia_atual}")
         context[f'{self.tabela_producao}_mostrar_pecas'] = str(f"{qtde_ciclos_do_dia_atual}")
 
-
         context[f'{self.tabela_producao}_mostrar_status_de_producao'] = str(f"Status: {status_de_producao}")
+
+        context['mostrar_data_hora_atual'] = str(f"Atualização: {data_hora_atual_str}")
 
         # context['pecas'] = [50, 100, 150, 200, 250, 300, 350]
 

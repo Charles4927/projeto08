@@ -13,7 +13,6 @@
         }
     </style>
 
-    <script type="text/javascript">function atualizar(){location.reload();}window.setInterval(atualizar, 40000);</script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
@@ -27,6 +26,32 @@
             <h5 style="background-color: #ffffff; padding: 10px; border-radius: 10px; font-weight: bold; font-size: 50px;">Máquinas em Tempo Real</h5>
         </div>
     </div>
+
+    <div class="row justify-content-center align-items-center">
+        <h2 class="text-dark p-4" style="display: inline-block;">
+            {% block tem %}
+            {{ mostrar_data_hora_atual }}
+            {% endblock %}
+        </h2>
+
+        <button style="font-weight: bold; font-size: 30px; display: inline-block; height: 50px; text-align: center; line-height: 10px;" class="btn btn-dark" onclick="showLoading()">Atualizar</button>
+    </div>
+
+    <div id="loadingDiv" style="display: none; position: fixed; z-index: 999; top: 25%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="spinner-border text-primary" role="status" style="width: 10rem; height: 10rem;">
+            <span class="visually-hidden"></span>
+        </div>
+    </div>
+
+    <script>
+        function showLoading() {
+            var loadingDiv = document.getElementById('loadingDiv');
+            loadingDiv.style.display = 'block';
+            setTimeout(function() {
+                location.reload();
+            }, 200); // Tempo de exemplo, ajuste conforme necessário
+        }
+    </script>
 
     <div class="bar-mesclada-horizontal my-4">
   <div class="bar-animada-interna"></div>
